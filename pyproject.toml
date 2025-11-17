@@ -72,15 +72,7 @@ exclude = [
     ".ruff_cache",
     ".venv",
     "__pycache__",
-    "main.py",
-    "scrape_jsic.py",
-    "add_examples_*.py",
-    "create_*.py",
-    "test_*.py",
 ]
-
-[tool.ruff.lint.isort]
-known-first-party = ["scrape_jsic", "main"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 5
