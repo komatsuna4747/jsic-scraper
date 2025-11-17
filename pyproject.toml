@@ -72,7 +72,11 @@ exclude = [
     ".ruff_cache",
     ".venv",
     "__pycache__",
-    "tests",
+    "main.py",
+    "scrape_jsic.py",
+    "add_examples_*.py",
+    "create_*.py",
+    "test_*.py",
 ]
 
 [tool.ruff.lint.isort]

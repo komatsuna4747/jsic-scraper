@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, feature/**]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -24,13 +24,10 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Run ruff check on src/
-        run: uv run ruff check src/
+      - name: Run ruff check (follows pyproject.toml)
+        run: uv run ruff check .
 
-      - name: Run ruff check on tests/
-        run: uv run ruff check tests/
-
-      - name: Run ruff format check
+      - name: Run ruff format check (follows pyproject.toml)
         run: uv run ruff format --check .
 
   test:
@@ -50,8 +47,8 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Run pytest
-        run: uv run pytest tests/unittests/ -v --tb=short
+      - name: Run pytest (follows pyproject.toml)
+        run: uv run pytest -v
 
   secret-scan:
     name: Secret Detection
