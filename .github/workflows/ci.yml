@@ -24,10 +24,10 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Run ruff check (follows pyproject.toml)
+      - name: Run ruff check
         run: uv run ruff check .
 
-      - name: Run ruff format check (follows pyproject.toml)
+      - name: Run ruff format check
         run: uv run ruff format --check .
 
   test:
@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Run pytest (follows pyproject.toml)
+      - name: Run pytest
         run: uv run pytest -v
 
   secret-scan:
